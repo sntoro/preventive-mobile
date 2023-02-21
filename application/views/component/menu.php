@@ -8,13 +8,13 @@
 						<div class="col-md-6 col-sm-6">
 							<div class="page-header-title" style="text-align:left">
 								<div class="d-inline">
-									<h4>Home</h4>
+									<h4><?php echo $title; ?></h4>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 col-sm-6">
 							<div class="page-header-breadcrumb" style="text-align:right">
-								<label>Welcome User</label>
+								<label><?php echo $users['NAME']; ?></label>
 							</div>
 						</div>
 					</div>
@@ -25,7 +25,7 @@
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-xl-12">
 							<div class="alert alert-primary background-primary">
-								<strong>Welcome ! </strong>User Lorem Ipsum
+								<strong>Welcome ! </strong><?php echo $users['NAME']; ?>
 							</div>
 						</div>
 					</div>

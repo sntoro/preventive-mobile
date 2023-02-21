@@ -14,10 +14,10 @@ class Tool_c extends CI_Controller {
 		$this->datetime = $datetimelocal->format('Y-m-d H:i:s');
 		$this->url = $this->uri->segment(1);
 		$this->session_array = $this->session->all_userdata();
-		$this->usercode = $this->session_array['USER_CODE'];
-		// if (!$this->usercode) {
-		// 	redirect(base_url('exp/6'));
-		// }
+		$this->npk = $this->session_array['NPK'];
+		if (!$this->npk) {
+			redirect(base_url('index/6'));
+		}
 
 	}
 

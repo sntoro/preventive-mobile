@@ -9,7 +9,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="page-header-title" style="text-align:left">
                                 <div class="d-inline">
-                                    <h4>Task detail</h4>
+                                    <h4><?php echo $title; ?></h4>
                                 </div>
                             </div>
                         </div>

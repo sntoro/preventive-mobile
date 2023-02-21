@@ -36,8 +36,28 @@ class Pic_m extends CI_Model
         return $this->db->get();
     }
 
-    public function add_batch($data)
+    public function check_password($npk, $pass)
     {
-        return $this->db->insert_batch($this->pic, $data);
+        $this->db->where('CHR_NPK', $npk);
+        $user = $this->db->get($this->pic);
+
+        if ($user->num_rows() > 0) {
+            if (trim($pass) == trim($user->row()->CHR_PASSWORD)) {
+                
+                $user_session = array(
+                    'NPK'           => $npk,
+                    'USERNAME'      => trim($user->row()->CHR_USERNAME),
+                    'NAME'          => $user->row()->CHR_NAME,
+                    'VAL'           => true
+                );
+                $this->session->set_userdata($user_session);
+                
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        } else {
+            return FALSE;
+        }
     }
 }
