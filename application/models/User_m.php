@@ -24,7 +24,7 @@ class User_m extends CI_Model
                     'SECTION'       => $user->row()->INT_ID_SECTION,
                     'SUBSECTION'    => $user->row()->INT_ID_SUB_SECTION,
                     'ROLE'          => $user->row()->INT_ID_ROLE,
-                    'VAL' => true
+                    'VAL'           => true
                 );
                 $this->session->set_userdata($user_session);
                 

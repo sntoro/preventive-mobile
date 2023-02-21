@@ -6,8 +6,7 @@ class Login_c extends CI_Controller {
     public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('User_m');
-
+		$this->load->model('Pic_m');
 
 		$this->layout = '/template/blank';
 		$this->ip_address = $_SERVER['REMOTE_ADDR'];
@@ -60,7 +59,7 @@ class Login_c extends CI_Controller {
             case '6':
                 $data['msg'] = '<p>
                 <div class="alert alert-success text-center">
-                Updating password was successful. Try to Login.
+                Login session was expired.
                 </div>';
                 break;
             case '7':
@@ -88,10 +87,10 @@ class Login_c extends CI_Controller {
 		$usercode = $this->input->post('usercode');
 		$password = $this->input->post('password');
 
-		$data = $this->User_m->check_password($usercode, $password);
+		$data = $this->Pic_m->check_password($usercode, $password);
 
 		if($data){
-			redirect(base_url('Job_list_c'));
+			redirect(base_url('Menu_c'));
 		}else{
 			$this->index(1);
 		}
